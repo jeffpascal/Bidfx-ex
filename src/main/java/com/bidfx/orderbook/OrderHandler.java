@@ -18,12 +18,13 @@ public class OrderHandler {
     private OrderBook orderBook = new OrderBook();
 
     public Map<String, Object> handleOrder(Order order) {
-        // TODO: Handle incoming order
+    	
+        orderBook.add(order);
         return publishChangedLevels();
     }
 
     private Map<String, Object> publishChangedLevels() {
         // TODO: Publish a price map containing what price levels have changed
-        return null;
+        return OrderBook.getOrderBook();
     }
 }
